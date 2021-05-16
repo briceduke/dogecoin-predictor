@@ -16,13 +16,11 @@ from tensorflow.keras.layers import  Dense, Dropout, LSTM
 from tensorflow.keras.models import Sequential
 
 # Variable Data
-# crypto = "DOGE"
-# fiat = "USD"
-# start = dt.datetime(2016,1,1)
-# days_into_future = 1
 prediction_days = 50 # Lower number will deviate more, higher will be more conservative
 
 def run(ticker, days_into_future, current):
+
+    print(f"Starting Neural Network for {ticker}...")
 
     # Data
     end = dt.datetime.now()
