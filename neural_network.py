@@ -53,7 +53,7 @@ def run(ticker, days_into_future, current):
     model.add(Dense(units=1))
 
     model.compile(optimizer="adam", loss="mean_squared_error")
-    model.fit(x_train, y_train, epochs=25, batch_size=32)
+    model.fit(x_train, y_train, epochs=25, batch_size=32, verbose=0)
 
     # Test the Model
 
