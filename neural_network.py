@@ -9,18 +9,20 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import pandas_datareader as web
 import datetime as dt
+import random
 
 # ML Imports
 from sklearn.preprocessing import MinMaxScaler
 from tensorflow.keras.layers import  Dense, Dropout, LSTM
 from tensorflow.keras.models import Sequential
 
-# Variable Data
-prediction_days = 50 # Lower number will deviate more, higher will be more conservative
+
 
 def run(ticker, days_into_future, current):
+    # Variable Data
+    prediction_days = random.randint(10, 80) # Lower number will deviate more, higher will be more conservative
 
-    print(f"Starting Neural Network for {ticker}...")
+    print(f"Starting Neural Network for {ticker}... {prediction_days}")
 
     # Data
     end = dt.datetime.now()
