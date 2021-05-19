@@ -9,6 +9,7 @@ def linreg(company, days_into_future, current):
     dict = {}
 
     print(f"Starting Linear Regression for {company}...")
+    
     def run():
         forecast_out = days_into_future # predicting days into future
 
