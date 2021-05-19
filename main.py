@@ -5,13 +5,13 @@ from neural_network import run
 from regression import linreg
 from brownian import brownian
 
-ticker = input("Ticker: ")
-start = dt.datetime(1970,1,1)
-
-current = web.DataReader(ticker, "yahoo", start, dt.datetime.now())
-actual_price = current['Close'].values[-1]
-
 def do():
+    ticker = input("Ticker: ")
+    start = dt.datetime(1970,1,1)
+
+    current = web.DataReader(ticker, "yahoo", start, dt.datetime.now())
+    actual_price = current['Close'].values[-1]
+
     days_into_future = int(input("Days Into Future: "))
     iterations = int(input("Iterations: "))
 
@@ -19,7 +19,7 @@ def do():
 
     list = []
 
-    for i in range(iterations):
+    for _ in range(iterations):
         lstm = run(ticker, days_into_future, current)
         regression = linreg(ticker, days_into_future, current)
         monte = brownian(ticker, start, days_into_future)
