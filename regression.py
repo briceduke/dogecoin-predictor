@@ -1,17 +1,13 @@
 import numpy as np
-import matplotlib.pyplot as plt
-import datetime as dt
 import pandas as pd
-import pandas_datareader as web
-import operator
 
 from sklearn.linear_model import LinearRegression
-from sklearn import preprocessing, svm
+from sklearn import preprocessing
 from sklearn.model_selection import train_test_split
 
 def linreg(company, days_into_future, current):
     dict = {}
-    
+
     print(f"Starting Linear Regression for {company}...")
     def run():
         forecast_out = days_into_future # predicting days into future
